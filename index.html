@@ -117,23 +117,23 @@
                         Hire Me
                     </a>
                     <div class="social">
-                        <span class="social__title">Follow Me</span>
+                        <span class="social__title">Let's Connect : </span>
                         <ul class="social__list">
                             <li class="social__item">
-                                <a href="javascript:void(0)" class="social__link">
-                                    <i class="ri-facebook-fill"></i>
+                                <a href="https://www.linkedin.com/in/jatin-vats-b89978200/" target="_blank" class="social__link">
+                                    <i class="ri-linkedin-fill"></i>
                                 </a>
                             </li>
                             <li class="social__item">
-                                <a href="javascript:void(0)" class="social__link">
-                                    <i class="ri-twitter-line"></i>
+                                <a href="https://github.com/JatinVats" target="_blank" class="social__link">
+                                    <i class="ri-github-fill"></i>
                                 </a>
                             </li>
-                            <li class="social__item">
+                            <!-- <li class="social__item">
                                 <a href="javascript:void(0)" class="social__link">
                                     <i class="ri-dribbble-line"></i>
                                 </a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                         make people's live simple.</h2>
                     <p class="about__description">As a web designer, I bring creativity and technical expertise to the development of custom, visually appealing websites that meet clients' needs and exceed their expectations.
                        </p>
-                    <a href="https://drive.google.com/file/d/1idAIosi94Vyg9n01zojnERi9bpz1mO36/view?usp=sharing" class="btn btn--primary"><i class="ri-article-line"></i>Download CV</a>
+                    <a href="https://drive.google.com/file/d/1yKdHpIuhxLlRQcwQEDw0nQxY9S37_OV1/view?usp=sharing" target="_blank" class="btn btn--primary"><i class="ri-article-line"></i>Download CV</a>
                 </div>
                 <img src="assets/img/about.png" alt="Jatin Vats" class="about__img">
             </div>
@@ -471,18 +471,18 @@
                 <h2 class="section__title">Lets Get Started.</br> Feel Free to Contact</h2>
             </div>
             <div class="d-grid contact__wrapper container">
-                <form action="" class="contact__form">
+                <form action="" onsubmit="sendMail(); reset(); return false;" class="contact__form">
                     <div class="form__group">
                         <label for="" class="form__label">Name</label>
-                        <input type="text" class="form__input" placeholder="Enter your name" required>
+                        <input type="text" id="name" class="form__input" placeholder="Enter your name" required>
                     </div>
                     <div class="form__group">
                         <label for="" class="form__label">Email</label>
-                        <input type="email" class="form__input" placeholder="Enter your email" required>
+                        <input type="email" id="email" class="form__input" placeholder="Enter your email" required>
                     </div>
                     <div class="form__group">
                         <label for="" class="form__label">Message</label>
-                        <textarea class="form__input form__textarea"
+                        <textarea id="message" class="form__input form__textarea"
                             placeholder="Tell me about your project"></textarea>
                     </div>
                     <button type="submit" class="btn btn--primary">
@@ -554,20 +554,20 @@
                 </ul>
                 <ul class="social__list">
                     <li class="social__item">
-                        <a href="javascript:void(0)" class="social__link">
-                            <i class="ri-facebook-fill"></i>
+                        <a href="https://www.linkedin.com/in/jatin-vats-b89978200/" target="_blank" class="social__link">
+                            <i class="ri-linkedin-fill"></i>
                         </a>
                     </li>
                     <li class="social__item">
-                        <a href="javascript:void(0)" class="social__link">
-                            <i class="ri-twitter-line"></i>
+                        <a href="https://github.com/JatinVats" target="_blank" class="social__link">
+                            <i class="ri-github-line"></i>
                         </a>
                     </li>
-                    <li class="social__item">
-                        <a href="javascript:void(0)" class="social__link">
+                    <!-- <li class="social__item">
+                        <a href="https://portfiolio-jatinvats.netlify.app/" class="social__link">
                             <i class="ri-dribbble-line"></i>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -587,6 +587,21 @@
 
     <!--=================== Main JS ====================-->
     <script src="assets/js/main.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        
+const sendMail = ()=>{Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "vatsjatin804@gmail.com",
+    Password : "A40D1C8BCAB2C38049A919056F5B63B9D430",
+    To : 'vatsjatin804@gmail.com',
+    From : "vatsjatin804@gmail.com",
+    Subject : "My Portfolio Request",
+    Body : `Sent By: ${document.getElementById("name").value} with Email: ${document.getElementById("email").value} <br> ${document.getElementById("message").value}`,
+}).then(
+  message => alert(message)
+)};
+    </script>
 </body>
 
 </html>
