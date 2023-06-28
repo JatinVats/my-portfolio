@@ -125,6 +125,10 @@ body {
 
 /* Dark Theme 
 --------------------------------------------------------------*/
+
+
+
+
 .dark-theme {
   background-color: var(--color-secondary);
   color: var(--color-gray-light);
@@ -177,6 +181,11 @@ body {
 
 .dark-theme::-webkit-scrollbar-thumb {
   background-color: var(--color-gray-light);
+}
+
+
+.dark-theme .open-icon{
+  color: black;
 }
 
 /* Reausable CSS Classes
